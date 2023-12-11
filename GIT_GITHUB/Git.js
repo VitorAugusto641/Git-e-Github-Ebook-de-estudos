@@ -11,6 +11,8 @@
 // git init                  | É o ponto de partida para o controle de versão em um projeto Git.
 // git status                | Quando você executa este comando, o Git fornece informações sobre quais arquivos foram modificados, adicionados ou excluídos desde o último commit
 // git branch -m master main | É usado para renomear a branch atual de master para main
+// git add .                 | Adiciona todos os arquivos da pasta que quer ser monitorada
+// git commit -m "mensagem"  | É usado para registrar as alterações feitas nos arquivos do seu projeto no histórico de versões do Git
 
 // CONFIGURANDO GIT PRIMEIRA VEZ
 // git config --local user.name "Seu nome aqui"
