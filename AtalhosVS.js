@@ -1,0 +1,10 @@
+// CTRL+ESPAÇO = Mostrar sugestões no VS.
+// ALT + Z = Quebra linha
+// CTRL + . = Reparo rápido
+// CTRL + ; = Comentar linha
+// Shift + Alt + F = Formar o documento (Espaços Inadequados)
+// F8 = Mostrar o erro
+// CTRL + F2 = Todas as palavras iguais são selecionadas, se mudar uma, muda todas.
+// CTRL + D = Seleciona a próxima ocorrência da palavra.
+// CTRL + SHIFT + K = Apaga a linha inteira
+// CTRL + K depois CTRL + S = Aparece todos os atralhos 
