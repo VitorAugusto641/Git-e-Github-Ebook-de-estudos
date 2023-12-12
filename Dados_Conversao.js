@@ -1,4 +1,4 @@
-//  Tipos de dados
+//  Tipos de dados: Null, boleano, number, undefined, string, ECNAscript6
 var varNull = null ; // Como se fosse 0 ou falso  
 var boleana = true ;
 var number = 42 ;
@@ -6,16 +6,11 @@ var undefined ;
 var strings = "teste" ;
 var ECMAScript6 = Symbol();
 
-// Conceitos
+// CONCEITOS DOS DADOS - String, Array, Lista
+numeros = [1,2,3,4,5] //  Array Coleção de elementos do mesmo tipo:  
+lista_elementos [10,"maça",3.14, True, "banana"] // Lista - Semelhante a Array mas pode conter outros tipos de elementos e tamanho dinâmico 
 
-//  string = letras
-letras = "Hello my friend" 
-//  Array Coleção de elementos do mesmo tipo: 
-numeros = [1,2,3,4,5]
-//  Lista - Semelhante a Array mas pode conter outros tipos de elementos e tamanho dinâmico = 
-lista_elementos [10,"maça",3.14, True, "banana"]
-// Conversão
-
+// CONVERSAO DE NÚMEROS
 const numero = 10
 let texto = numero.toString();    // Converter um número em uma string
 console.log (texto)
