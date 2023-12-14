@@ -1,1 +1,5 @@
-Git
+.Git
+GIT_GITHUB /
+
+# Ignorando arquivos .NomedoArquivo
+# Ignorando pasta .NomedaPasta/
