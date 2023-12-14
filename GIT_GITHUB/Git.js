@@ -8,7 +8,7 @@
 // cd                        | Entra na pasta Exemplo: cd \desktop
 // cd ..                     | Volta uma pasta
 // ls                        | Mostras os arquivos que tem nesse diretório
-// git init                  | É o ponto de partida para o controle de versão em um projeto Git.
+// git init                  | É o ponto de partida para o controle de versão em um projeto Git. 1º Passo
 // git status                | Quando você executa este comando, o Git fornece informações sobre quais arquivos foram modificados, adicionados ou excluídos desde o último commit
 // git branch -m master main | É usado para renomear a branch atual de master para main
 // git add .                 | Adiciona todos os arquivos da pasta que quer ser monitorada
@@ -18,6 +18,12 @@
 // git log --oneline         | Histórico de alterações com apenas a primeira parte da hast e mensagem de commit
 // git log -p                | Histórico de alterações mostrando os arquivos que foram modificados
 // git log --help            | É usado para exibir a documentação e as opções disponiveis para o comando git log no navegador.
+// mkdir nomeDaPasta         | Cria uma pasta      
+// git init -bare            | Vc entra na pasta, e depois manda o comando desejado, então se Cria um repositório git que é usado para armazenar e compartilhar o código, mas não permite editar ou commitar arquivos nele
+// git remote add NomedaPasta Endereço | git remote add vitor C:/Users/ALURA/Documents/git-e-github/servidor | Adicionando um repositorio local
+// git remote                | Criar, visualizar e excluir conexões com outros repositórios.
+// git push NomeDaPasta main | É usado para enviar o conteúdo do repositório local para um repositório remoto
+// git remote rename origin local | Renomenado o nome da pasta 'origin' para 'local' por exemplo. 
 
 // CONFIGURANDO GIT PRIMEIRA VEZ
 // git config --local user.name "Seu nome aqui"
