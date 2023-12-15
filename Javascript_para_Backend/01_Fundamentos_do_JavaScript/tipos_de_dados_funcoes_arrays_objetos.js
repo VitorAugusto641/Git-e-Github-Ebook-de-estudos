@@ -24,13 +24,13 @@ const numero02 = parseFloat(texto02) // Converter uma string em um ponto flutuan
 
 
 var vitor = "First Name"
-// Sobrescrição de dados e qualquer escopo
+// Sobrescrição de dados e qualquer escopo - var conceito
 
 var vitor = "Primeiro nome"
 // Exemplo, ele foi sobrescrito. E agora no console só sai 'Primeiro nome' o 'First Name não aparece mais.
 
 const Augusto = "Last Name"
-// Constante, não aceita modificação e é Escopo de Bloco {}
+// Constante, não aceita modificação e é Escopo de Bloco local {}
 
 let dog = "Belinha"
 //// É usada para declarar uma variável local com escopo de bloco:{}, e permite sobrescrição de dados
@@ -64,3 +64,33 @@ console.log ("O tamanho da string é:",tamanho) // Log: O tamanho da string é: 
 // toLowerCase() : converte todos os caracteres da string para letras minusculas
 var minusculas = frase.toLowerCase();
 console.log(minusculas) // Log: my dog is very good!
+
+// // Console conceito - outros métodos
+// console.error()                    | Para exibir mensagens de erro;
+// console.table()                    | Para visualizar de forma mais organizada informações tabulares;
+// console.time() e console.timeEnd() | Para temporizar período que uma operação de código leva para ser iniciada e concluída;
+// console.trace()                    | Para exibir a stacktrace de todos os pontos (ou seja, os arquivos chamados) por onde o código executado passou durante a execução.
+
+
+// ### Operadores ###
+
+const a = 10            //    && - And 
+const b = 15            //    || - Or
+const c = 20            //    ! - Not
+
+console.log(a > b && b>c ) 
+console.log( a === b || b === c) 
+console.log(!(a<b))
+
+
+//  ### Condicionais ###
+// IF:
+if (condition) {
+    
+}
+//  IF E ELSE 
+if (condition) {
+    
+} else {
+    
+}
