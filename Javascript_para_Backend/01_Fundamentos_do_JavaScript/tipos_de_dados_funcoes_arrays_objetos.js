@@ -11,6 +11,7 @@ var ECMAScript6 = Symbol();
 // CONCEITOS DOS DADOS - String, Array, Lista
 numeros = [1,2,3,4,5] //  Array Coleção de elementos do mesmo tipo:  
 var lista_elementos = [10, "maça", 3.14, true, "banana"]; // Lista - Semelhante a Array mas pode conter outros tipos de elementos e tamanho dinâmico 
+
 // CONVERSAO DE NÚMEROS
 const numero = 10
 let texto = numero.toString();    // Converter um número em uma string
@@ -74,23 +75,86 @@ console.log(minusculas) // Log: my dog is very good!
 
 // ### Operadores ###
 
-const a = 10            //    && - And 
-const b = 15            //    || - Or
-const c = 20            //    ! - Not
+let a = 10             
+const b = 15            
+const c = 20            
+console.log(a==b)                   //   | Compara valores
+console.log(a===b)                  //   | Compara valores e tipos
+console.log(a!=b)                   //   | Compara valores
+console.log(a!==b)                  //   | Compara valores e tipos
+console.log(a > b)                  //   | Maior que 
+console.log(a < b)                  //   | Menor que
+console.log(a >=b)                  //   | Maior ou igual que
+console.log(a <= b)                 //   | Menor ou igual que
+a += 5;                             //   | Atribuição com Adição - Equivale = a: a + 5
+a -= 5;                             //   | Atribuição com Subtração
+a *= 2;                             //   | Atribuição com multiplicação
+a /= 4;                             //   | Atribuição com divisão
+a %= 3;                             //   | Atribuição com resto da divisão
+console.log(a > b && b>c)           //   | && - And 
+console.log( a === b || b === c)    //   | || - Or
+console.log(!(a<b))                 //   | ! - Not
 
-console.log(a > b && b>c ) 
-console.log( a === b || b === c) 
-console.log(!(a<b))
+//  ### Condicionais ###  
 
-
-//  ### Condicionais ###
+const idadeMinima= 18;
+const idadeCliente= 16;
 // IF:
-if (condition) {
-    
+if (idadeMinima >= idadeCliente) {
+console.log("Cliente é de menor")    
 }
+
 //  IF E ELSE 
-if (condition) {
-    
+if (idadeMinima >= idadeCliente) {
+console.log("Cliente é de menor, com if e else")    
 } else {
-    
+console.log("Cliente é maior de idade")
 }
+
+// Operador Ternario ?
+console.log(idadeMinima >= idadeCliente ? "sim, ele é menor de idade":"Ele é maior de idade") //console.log(condição >=  condição2 ? "true":"false")
+
+// Switch
+let diaSemana ="quarta"
+switch (diaSemana) {
+    case "segunda":
+    console.log("É segunda, vai trabalhar")        
+        break;
+    case "terca":
+        console.log("É terça, pode folgar")
+        break
+    default:
+        console.log("Não é segunda e nem terça, hoje é quarta")
+        break;
+}
+
+// ### FUNCOES ###
+// As funções podem ser reaproveitadas
+function imprimeTexto(texto) {
+    console.log(texto);
+  }
+
+  imprimeTexto("Vitor")
+  imprimeTexto("Augusto")
+
+  function soma() {
+    return 1.5 + 2;
+  }
+  console.log(soma())
+  soma()
+
+//   Outra Funções
+let num = 3.5
+let num2 = 4
+let num3 = 5
+let exp = 2
+// ### Funcoes matematicas ###
+let arredondamento = Math.round(num)          // | Math.round() - Arredonda um número flutuante
+let arredonamentoMaior = Math.ceil(num)       // | Math.ceil()  - Faz o arredondamento para o valor mais alto
+let arrendoamentoMenor = Math.floor(num)      // | Math.floor() - Faz o arredondamento para o valor mais baixo
+let desconsideraDecimal = Math.trunc(num)     // | Desconsidera os números decimais
+let exponencial = Math.pow(num,exp)           // | Faz a exponenciação de 2 números, quando for simples, como ao quadrado(2) ou cubo(3). Recomenda-se usar a multiplicação por ser mais rápido.
+let raizQuad = Math.sqrt(num)                 // | Retorna a raiz quadrada de um número.
+let valorMinimo = Math.min(num,num2,num3)     // | Retorna o maior valor entre os argumentos.
+let valorMaximo = Math.max(num,num2,num3)     // | Retorna o maior valor entre os argumentos.
+var aleatorio = Math.random()                 // | Retorna um valor randômico (random em inglês) entre 0 e 1, então não teremos um valor esperado para receber.
