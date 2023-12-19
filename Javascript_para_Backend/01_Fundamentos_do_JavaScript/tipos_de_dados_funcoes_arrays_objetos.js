@@ -8,6 +8,15 @@ var undefined ;
 var strings = "teste" ;
 var ECMAScript6 = Symbol();
 
+// String: São sequências de caracteres alfanuméricos (letras, números e/ou símbolos)
+
+let saudacoes =`Seja bem-vindo ${vitor}`            //     | Declarando com o ${}
+const converteEmString = new String(number)         //     | Converte para String.
+var tamanho = frase.length                          //     | Serve para nos informar o tamanho de uma string
+console.log("Alura".charAt(3))                      //     | Acessar um caractere de uma string. No exemplo: // r 
+console.log(strings[0])                             //     | Faz mesma função do charAt ()
+console.log(strings.indexOf("s"))                   //     | Retorna a posição de um caractere dentro da string. No exemplo: // 2
+
 // CONCEITOS DOS DADOS - String, Array, Lista
 numeros = [1,2,3,4,5] //  Array Coleção de elementos do mesmo tipo:  
 var lista_elementos = [10, "maça", 3.14, true, "banana"]; // Lista - Semelhante a Array mas pode conter outros tipos de elementos e tamanho dinâmico 
@@ -36,7 +45,7 @@ const Augusto = "Last Name"
 let dog = "Belinha"
 //// É usada para declarar uma variável local com escopo de bloco:{}, e permite sobrescrição de dados
 
-console.log(`dados: ${vitor},${Augusto},${dog}`) // Caso declarar assim, cuidado com a crase `` 
+console.log(`declarando com $ {}: ${vitor},${Augusto},${dog}`) // Caso declarar assim, cuidado com a crase `` 
 // node Variaveis.js para executar
 
 // Testes de escopo
@@ -47,20 +56,15 @@ function exemplo() {
         let h = 12; 
         var g = 15;
         const  y = 10;
-        console.log(g);
-        console.log(h);
-        console.log(y);
+        console.log("Teste de escopo global",g);
+        console.log("Teste de escopo global",h);
+        console.log("Teste de escopo global",y);
     }
-    console.log(globalVariavel)
+    console.log("Teste de escopo global",globalVariavel)
 }
 exemplo()
 
 // #### Manipulação e métodos #####
-
-// Lenght : Utilizada para sabermos quantos caracteres uma string contém
-var frase = "MY dog is very good!"
-var tamanho = frase.length
-console.log ("O tamanho da string é:",tamanho) // Log: O tamanho da string é: 20
 
 // toLowerCase() : converte todos os caracteres da string para letras minusculas
 var minusculas = frase.toLowerCase();
@@ -130,20 +134,7 @@ switch (diaSemana) {
 
 // ### FUNCOES ###
 // As funções podem ser reaproveitadas
-function imprimeTexto(texto) {
-    console.log(texto);
-  }
 
-  imprimeTexto("Vitor")
-  imprimeTexto("Augusto")
-
-  function soma() {
-    return 1.5 + 2;
-  }
-  console.log(soma())
-  soma()
-
-//   Outra Funções
 let num = 3.5
 let num2 = 4
 let num3 = 5
@@ -158,3 +149,82 @@ let raizQuad = Math.sqrt(num)                 // | Retorna a raiz quadrada de um
 let valorMinimo = Math.min(num,num2,num3)     // | Retorna o maior valor entre os argumentos.
 let valorMaximo = Math.max(num,num2,num3)     // | Retorna o maior valor entre os argumentos.
 var aleatorio = Math.random()                 // | Retorna um valor randômico (random em inglês) entre 0 e 1, então não teremos um valor esperado para receber.
+
+// ############################################ Função sem retorno e sem Parâmetro - function
+
+// Apenas executa uma instrução, sem a necessidade de disponibilizar o resultado para o restante do código.
+function cumprimentar(){
+    console.log('oi gente!')
+   }
+   cumprimentar()
+
+// ---------------------------------------------------------------------------------------
+
+// ############################################ Funcão sem retorno, mas com parâmetro
+
+// Recebe o parâmetro da pessoa a ser cumprimetada, com isso pode ser reutlizada.
+function cumprimentaPessoa(pessoa){
+    console.log(`oi, ${pessoa}!`)
+   }
+   cumprimentaPessoa('Helena')
+// ---------------------------------------------------------------------------------------
+
+// ############################################ Funcão com return e sem parâmetro
+function cumprimentar(){
+    return 'Oi gente!'
+   }
+   function cumprimentaPessoa(nomePessoa) {
+    console.log(`${cumprimentar()} Meu nome é ${nomePessoa}`)
+   }
+   cumprimentaPessoa('Paula') // “Oi gente! Meu nome é Paula”
+
+// ---------------------------------------------------------------------------------------
+
+// ############################################ Funcão com retorno e mais de um parâmetro
+function operacaoMatematica(numero1, numero2, numero3) {
+    return numero1 + numero2 + numero3
+   }
+   operacaoMatematica(15, 30, 45) // 90
+// ---------------------------------------------------------------------------------------
+
+// ############################################ Arrow Function
+// É uma função de seta
+// Exemplo 1:
+const somaNumeros = (number1,number2) => number1 + number2
+const resultado1 = somaNumeros(5,4)
+console.log("Soma Arrow: ", resultado1)
+// Exemplo 2:
+const somaNumerosPequenos = (nume1,nume2) => {
+    if (nume1 > 10 || nume2 > 10) {
+    return "somente números de 1 a 9"        
+    } else {
+        return nume1 + nume2;
+    }
+}
+const resultado02 = somaNumerosPequenos(2,1)
+console.log(resultado02)
+// --------------------------------------------------------------------------------------
+// High order functions:
+// São funções que recebem uma função ou mais como argumento, retornando outra função;
+// Exemplo:
+const acesso = (nome) => {
+    return `${nome} logou com sucesso no sistema!`
+  }
+  
+  const autentica = (cargo) => {
+    let array = []
+    for( i = 0; i < cargo; i++){
+      array.push(i)
+    }
+    return true;
+  }
+  
+  const login = (pessoa, autentica) => {
+    if(pessoa.cargo === `funcionario`) {
+       autentica(90000)
+    } else if(pessoa.cargo === `diretoria`) {
+       autentica(900000)
+    }
+   return acesso(pessoa.nome)
+  }
+//   -------------------------------------------------------------------------------------------------
