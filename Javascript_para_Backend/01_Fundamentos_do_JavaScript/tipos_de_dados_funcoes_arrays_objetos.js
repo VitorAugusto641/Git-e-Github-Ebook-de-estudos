@@ -9,14 +9,22 @@ var strings = "teste" ;
 var ECMAScript6 = Symbol();
 
 // String: São sequências de caracteres alfanuméricos (letras, números e/ou símbolos)
-
-let saudacoes =`Seja bem-vindo ${vitor}`            //     | Declarando com o ${}
-const converteEmString = new String(number)         //     | Converte para String.
-var tamanho = frase.length                          //     | Serve para nos informar o tamanho de uma string
-console.log("Alura".charAt(3))                      //     | Acessar um caractere de uma string. No exemplo: // r 
-console.log(strings[0])                             //     | Faz mesma função do charAt ()
-console.log(strings.indexOf("s"))                   //     | Retorna a posição de um caractere dentro da string. No exemplo: // 2
-
+let frase= "Mergulhando em tecnologia"
+const palavra="alura";
+const nome = "Vitor Augusto"
+let comunicao = "Olá, Sr. nomedousuario, informamos que você tem 50% de desconto"
+let saudacoes =`Seja bem-vindo ${vitor}`              //     | Declarando com o ${}
+const converteEmString = new String(number)           //     | Converte para String.
+var tamanho = frase.length                            //     | Serve para nos informar o tamanho de uma string
+console.log("Alura".charAt(3))                        //     | Acessar um caractere de uma string. No exemplo: // r 
+console.log(strings[0])                               //     | Faz mesma função do charAt ()
+console.log(strings.indexOf("s"))                     //     | Retorna a posição de um caractere dentro da string. No exemplo: // 2
+console.log(palavra.toUpperCase())                    //     | ALURA - Deixa o texto em maiusculo 
+console.log(palavra.toLowerCase())                    //     | alura - Deixa o texto em minusculo 
+console.log(frase.slice(0,11))                        //     | Mergulhando - Retorna parte da string, falamos onde começa e onde termina
+console.log(comunicao.replace("nomedousuario",nome)); //     | O "nomedousuario" será trocado pela palavra que estiver no 'nome', ela substitui parte de uma string por outra.
+console.log(frase.concat("Concatenando String"))      //     | Adiciona a nova string ao fim da anterior.
+let semEspaco = comunicao.trim()                      //     | Remove os espaços em branco no início ou fim de uma string
 // CONCEITOS DOS DADOS - String, Array, Lista
 numeros = [1,2,3,4,5] //  Array Coleção de elementos do mesmo tipo:  
 var lista_elementos = [10, "maça", 3.14, true, "banana"]; // Lista - Semelhante a Array mas pode conter outros tipos de elementos e tamanho dinâmico 
@@ -228,3 +236,74 @@ const acesso = (nome) => {
    return acesso(pessoa.nome)
   }
 //   -------------------------------------------------------------------------------------------------
+// *********     Arrays  *************
+const nums = [50,43,22,10]
+const nums2 = [20,24,21]
+
+// Arrays: Armazena diversos valores e podem ser acessados
+
+// lenght - Fala quantidade de dados no Array.
+nums.length                                         
+console.log(nums); // 4
+
+// push() - Adiciona elemento ao Array                                          
+nums.push(15)                                       
+console.log(nums.push) // Adiciona o valor "15" no fim do array
+
+// pop() - Remove o ultimo elemnto do array 
+nums.pop()                                             
+
+// concat() - Junta dois arrays, colocando o array passado como argumento, logo depois do primeiro. Em português essa operação é conhecida como concatenação.
+const numsConcat = nums.concat(nums2);
+console.log(numsConcat); // [50, 43, 22, 10, 20, 24, 21]
+
+// filter() - Retorna uma lista contando todos os elementos que passaram em um teste, ou seja, uma função escrita por nós.
+const numsFilter = nums.filter(num => num > 30);
+console.log(numsFilter); // [50, 43]
+
+// find() - Funciona de forma parecida com o filter, porém retorna apenas o primeiro valor que satisfizer o teste, podendo ser uma string ou um número.
+const numsFind = nums.find(num => num < 30);
+console.log(numsFind); // 22
+
+// findIndex() - Funciona igual o find(), mas retorna o índice em vez do elemento, possibilitando usá-lo em outras partes do código.
+const numsFindIndex = nums.findIndex(num => num < 30);
+console.log(numsFindIndex); // 2
+
+// lastIndexOf() - É igual o findIndex() porém começa do último elemento, não no primeiro.
+const numsLastIndexOf = numsConcat.lastIndexOf(20);
+console.log(numsLastIndexOf); // 3
+
+// forEach() - Executa uma função em cada elemento do array de forma individual.
+nums.forEach(num => console.log(num)); // 50, 43, 22, 10
+
+// shift() - Retira o primeiro elemento do array.
+const numsShift = nums.shift();
+console.log(numsShift); // 50
+
+// unshift() - Funciona igual ao push(), porém adiciona na primeira posição e acaba trocando o índice de todos os elementos. Altera o array original com o novo valor.
+const numsUnshift = nums.unshift(100);
+console.log(numsUnshift); // [100, 43, 22, 10]
+
+// reduce() - Utiliza uma função definida pelo usuário em cada um dos elementos, guardando o resultado em uma variável que pode ser acessada dentro da função que foi definida, retornando um único valor no final, reduzindo o array para um único valor.
+const numsReduce = nums.reduce((a, b) => a + b, 0);
+console.log(numsReduce); // 175
+
+// reduceRight() - Funciona igual o reduce() porém começa do final do array e segue até o início.
+const numsReduceRight = nums.reduceRight((a, b) => a + b, 0);
+console.log(numsReduceRight); // 175
+
+// reverse() - Inverte a ordem dos elementos do array, então o primeiro vira o último, o segundo o penúltimo e assim por diante.
+const numsReverse = nums.reverse();
+console.log(numsReverse); // [10, 22, 43, 100]
+
+// slice() - Copia uma parte do array para outro array.
+const numsSlice = nums.slice(1, 3);
+console.log(numsSlice); // [22, 43]
+
+// sort() - Organiza o array de acordo com a classificação Unicode, onde os números vêm antes das letras, porém não funciona corretamente para números, onde temos que definir uma função que irá auxiliar o comando.
+const numsSort = nums.sort((a, b) => a - b);
+console.log(numsSort); // [10, 22, 43, 100]
+
+// splice() - Consegue remover, um ou mais elementos consecutivos caso o segundo parâmetro tenha um valor maior que 0, e incluir um ou mais elementos a partir de um índice escolhido.
+const numsSplice = nums.splice(1, 2, 200, 300);
+console.log(numsSplice); // [10, 200, 300, 100]
