@@ -242,31 +242,38 @@ const nums2 = [20,24,21]
 
 // Arrays: Armazena diversos valores e podem ser acessados
 
+const funcionarios = [
+    ["Ana", "Juliana", "Leonardo"],
+    [30, 35, 28]
+  ];
+console.log(`${funcionarios[0][2]} tem idade ${funcionarios[1][2]}`) // Leonardo tem idade 28
+
 // lenght - Fala quantidade de dados no Array.
 nums.length                                         
 console.log(nums); // 4
 
 // push() - Adiciona elemento ao Array                                          
 nums.push(15)                                       
-console.log(nums.push) // Adiciona o valor "15" no fim do array
+console.log(nums) // Adiciona o valor "15" no fim do array
 
-// pop() - Remove o ultimo elemnto do array 
+// pop() - Remove o ultimo elemento da array 
 nums.pop()                                             
+console.log(nums)
 
 // concat() - Junta dois arrays, colocando o array passado como argumento, logo depois do primeiro. Em português essa operação é conhecida como concatenação.
 const numsConcat = nums.concat(nums2);
 console.log(numsConcat); // [50, 43, 22, 10, 20, 24, 21]
 
 // filter() - Retorna uma lista contando todos os elementos que passaram em um teste, ou seja, uma função escrita por nós.
-const numsFilter = nums.filter(num => num > 30);
+const numsFilter = nums.filter(nums => nums > 30);
 console.log(numsFilter); // [50, 43]
 
 // find() - Funciona de forma parecida com o filter, porém retorna apenas o primeiro valor que satisfizer o teste, podendo ser uma string ou um número.
-const numsFind = nums.find(num => num < 30);
+const numsFind = nums.find(nums => nums < 30);
 console.log(numsFind); // 22
 
 // findIndex() - Funciona igual o find(), mas retorna o índice em vez do elemento, possibilitando usá-lo em outras partes do código.
-const numsFindIndex = nums.findIndex(num => num < 30);
+const numsFindIndex = nums.findIndex(nums => nums < 30);
 console.log(numsFindIndex); // 2
 
 // lastIndexOf() - É igual o findIndex() porém começa do último elemento, não no primeiro.
@@ -274,7 +281,7 @@ const numsLastIndexOf = numsConcat.lastIndexOf(20);
 console.log(numsLastIndexOf); // 3
 
 // forEach() - Executa uma função em cada elemento do array de forma individual.
-nums.forEach(num => console.log(num)); // 50, 43, 22, 10
+nums.forEach(nums => console.log(num)); // 50, 43, 22, 10
 
 // shift() - Retira o primeiro elemento do array.
 const numsShift = nums.shift();
@@ -305,5 +312,39 @@ const numsSort = nums.sort((a, b) => a - b);
 console.log(numsSort); // [10, 22, 43, 100]
 
 // splice() - Consegue remover, um ou mais elementos consecutivos caso o segundo parâmetro tenha um valor maior que 0, e incluir um ou mais elementos a partir de um índice escolhido.
-const numsSplice = nums.splice(1, 2, 200, 300);
-console.log(numsSplice); // [10, 200, 300, 100]
+
+animaisDoAquario = ['1', '2', '3', '4']
+animaisDoAquario.splice(1,0,'5')  // Este comando está inserindo o elemento '5' na posição 1 do array, sem remover nenhum elemento
+//  ['1', '5', '2', '3', '4']
+animaisDoAquario.splice(3,2,'6')  // Este comando está inserindo o elemento '6' na posicao 3 do array, e removendo 2 elementos a partir da posição 3
+// ['1', '5', '2', '6', '3', '4'] agora fazendo a remoção: [ '1', '5', '2', '6' ]
+console.log(animaisDoAquario) 
+
+
+// ##### LOOPS #####
+
+// FOR - O código se repete, enquanto a condição for verdadeira
+// Primeira expressão: é executada apenas uma única vez
+// Segunda expressão: condição de execução
+// Terceira expressão: é executada sempre ao final do bloco
+
+// Exemplo 1:
+const NUmeros = [100,200,300,400,500,600];
+for (let indice = 0; indice <6; indice == indice++){
+console.log(indice)
+}
+// Exemplo 2: 
+const notas = [10, 6.5, 8, 7.5];
+let somaDasNotas = 0;
+for (let i = 0; i < notas.length; i++) {
+  somaDasNotas += notas[i];
+}
+const media = somaDasNotas / notas.length;
+console.log(`A média das notas é ${media}.`); // A média das notas é 8.
+
+// Exemplo 3: 
+
+for (let elemento of notas) {
+    somaDasNotas += elemento;
+    console.log(somaDasNotas)
+}
